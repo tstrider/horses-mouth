@@ -4,13 +4,13 @@
     "name": "tstrider"
   },
   "metadata": {
-    "description": "Official answers, straight from the source.",
-    "version": "1.0.0"
+    "description": "Answers straight from the source.",
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "horses-mouth",
-      "description": "Makes Claude check the owner's own website before it states an official price, date, spec, or policy.",
+      "description": "Makes Claude read the official source first for any fact, from prices and laws to docs, quotes, and statistics.",
       "source": "./",
       "strict": false,
       "skills": [

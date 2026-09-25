@@ -1,105 +1,114 @@
 <div align="center">
 
-# 🐴 Horse's Mouth
+# Horse's Mouth
 
-**Official answers, straight from the source. Even on low effort.**
+**Answers straight from the source. Even on low effort.**
 
-A skill for Claude that checks the owner's own website before it tells you an "official" price, date, spec, or policy.
+Before Claude tells you a fact, it reads the official source. The maker, the agency, the law itself, the docs, the study, or the person who said it.
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-D97757)](#install)
 [![Built for low effort](https://img.shields.io/badge/built%20for-low%20effort-2ea44f)](#built-for-low-effort)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[Install](#install) · [How it works](#how-it-works) · [Example](#before-and-after) · [FAQ](#faq)
+[Install](#install) · [What it covers](#what-it-covers) · [How it works](#how-it-works) · [Example](#before-and-after) · [FAQ](#faq)
 
 </div>
 
 ---
 
+Horse's Mouth is a skill for Claude. A skill is a short set of steps that Claude picks up when a question calls for it. This one makes Claude check the original source before it answers.
+
 ## The problem
 
-Ask Claude for the official price of something. Here is what can go wrong, especially on low effort:
+Ask Claude to look something up and it searches the web. Then it can read whatever shows up first: a news story, a blog, a forum post. The official source may sit right there in the results, never opened.
 
-1. It runs one search.
-2. It opens the two pages whose titles promise a price table. Usually blogs.
-3. It skips the company's own page, because that title looked less useful.
-4. It calls the blog's numbers "official."
-5. It ends with "I can check the official site if you'd like."
+So you get an answer that sounds sure but is secondhand, and it might be out of date or wrong. It may even end with "I can check the official site if you'd like."
 
-The answer sounds sure. It is secondhand. Sometimes it is wrong.
+## The fix
 
-## The fix: go to the owner first
+Horse's Mouth gives Claude one habit: **go to the source first.**
 
-The **owner** is whoever controls the fact.
+The source is whoever sets, measures, says, or first publishes the fact. Everyone else is repeating them.
 
-| Fact | Owner |
+## What it covers
+
+Any fact with an official source. For example:
+
+| You ask about | Claude reads first |
 |---|---|
-| A product's price or specs | The maker |
-| A store's price | That store |
-| A fee, law, or rating | The agency that sets it |
-| A company policy | That company |
-| An API limit or software behavior | The official docs, changelog, or source code |
-
-Everyone else is repeating the owner. Horse's Mouth makes Claude read the owner first.
+| A product's price, specs, or release date | The maker's own site |
+| A store's price or return policy | That store |
+| A law, rule, or court ruling | The official text |
+| A tax deadline, fee, or government form | The agency that runs it |
+| Health or safety advice | The public health agency |
+| A company's terms or plans | The company's own pages |
+| How an app or code library works | Its official docs, release notes, or code |
+| A statistic | The group that measured it |
+| What a study found | The study, not the news story about it |
+| Whether someone really said something | The original video, transcript, or post |
+| Sports rules or results | The league |
+| An event's date or details | The organizer |
 
 ## How it works
 
-When a question involves an owner-controlled fact, Claude loads the skill and follows seven steps:
+When your question involves a fact like these, Claude picks up the skill and follows seven steps:
 
-1. **Name the owner** and their website before searching.
-2. **Open the owner's pages first**, even when the titles look unhelpful. FAQs, help pages, and news posts often hold the numbers.
-3. **Search the owner's site** directly if the first page falls short.
-4. **Use other sites only for gaps**, and label those figures unofficial.
-5. **Settle conflicts now.** No "I can check later."
-6. **No math on unconfirmed counts.** It won't multiply a price by a box count it never verified.
-7. **Stop when the owner answers.** No extra reading.
+1. **Name the source** before searching.
+2. **Read the source first**, even when the page title looks unhelpful. Help pages, FAQs, and PDFs often hold the answer.
+3. **Search the source's own site** if it did not show up in the results, or if its first page falls short.
+4. **Use other sites only for gaps**, and say so.
+5. **Settle conflicts now** instead of offering to check later.
+6. **No math on unconfirmed numbers.**
+7. **Stop once the source answers.**
 
-Then it labels every figure:
+Then it labels each fact:
 
-- **official**: from the owner's page, with the link
-- **calculated**: math on official figures, with the math shown
-- **unofficial**: from another source, which it names
+- **official**: read on the official source, with a link
+- **calculated**: math on official numbers, with the math shown
+- **secondhand**: found only on another site, which it names
+- **unchecked**: from memory, only when it cannot reach any source
 
 ## Before and after
 
 *An illustration. Acme is a made-up company.*
 
-> **You:** What's the official price of the Acme Brew coffee maker and its pods?
+> **You:** Did Acme's CEO really say they're killing the free plan?
 
 **Without the skill**
 
-> The Acme Brew is $129 (official MSRP), and pods run about 60¢ each. Want me to check Acme's site to confirm?
+> Yes. According to a tech news site, Acme's CEO said the free plan ends in June. Want me to check Acme's announcement to confirm?
 
-Behind that answer: two review blogs, one of them out of date. Acme's own pages showed up in the search. Claude never opened them.
+Behind that answer: one news story. Acme's own announcement was in the search results. Claude never opened it.
 
 **With Horse's Mouth**
 
-> | Item | Price | Source |
-> |---|---|---|
-> | Acme Brew coffee maker | $149.99 | official ([acme.example/brew](#before-and-after)) |
-> | Pods, box of 24 | $17.99 | official ([acme.example/pods](#before-and-after)) |
-> | Price per pod | $0.75 | calculated ($17.99 ÷ 24) |
-> | Travel mug | $24.00 | unofficial (one retailer; Acme lists no price) |
+> Not quite.
 >
-> US prices, as of today.
+> - Acme's free plan closes to **new** sign-ups on June 1. **official** ([Acme's blog post](#before-and-after))
+> - Current free accounts keep working. **official** (same post)
+> - The "killing the free plan" line appears in one news story. It is not in Acme's post or in the CEO's own posts. **secondhand**
 
-Every number has a source. The one Claude could not confirm says so.
+Every fact has a source. The claim that did not hold up says where it came from.
 
 ## Built for low effort
 
-Low effort is Claude's cheap, fast setting. It is also the setting most likely to stop at the first page that looks like an answer.
+Low effort is a Claude setting. It answers faster and costs less. It also does less checking on its own.
 
-That is the gap this skill fills. Claude does not have to reason its way to "check the source first." The checklist tells it to. So you can leave Claude on low effort for everyday lookups and still get answers traced to the source.
+This skill fills that gap. Claude does not have to work out for itself that it should check the source. The steps tell it to. So you can keep Claude on low effort for everyday questions and still get answers from the source.
 
-It stays light:
+It stays light. Claude reads the full skill only when a question calls for it. Going to the source first often means reading fewer pages, and the search ends once the source answers.
 
-- **Under 600 words.** Until a question needs it, only the skill's short description sits in Claude's context.
-- **Fewer wasted reads.** Going to the owner first often replaces several third-party pages.
-- **A hard stop.** Once the owner answers every figure, the search ends.
-
-It works at any effort level. It is written so that low effort can follow it.
+It works at any effort level. It is written so low effort can follow it.
 
 ## Install
+
+### Claude apps (web, desktop, Cowork)
+
+1. Download **[horses-mouth.zip](https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip)**.
+2. Make sure code execution is on in your settings. Skills need it.
+3. Go to **Customize → Skills**. Click **+**, then **Create skill**, then **Upload a skill**, and choose the zip.
+
+Uploaded skills work in both chat and Cowork. [Anthropic's help article](https://support.claude.com/en/articles/12512180-using-skills-in-claude) has more detail.
 
 ### Claude Code
 
@@ -110,51 +119,46 @@ It works at any effort level. It is written so that low effort can follow it.
 /plugin install horses-mouth@horses-mouth
 ```
 
-**Option 2: copy the folder.** Run this in a macOS or Linux terminal:
+**Option 2: copy the folder.** Run this in a Mac or Linux terminal:
 
 ```bash
 mkdir -p ~/.claude/skills && curl -fsSL https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip -o /tmp/horses-mouth.zip && unzip -o /tmp/horses-mouth.zip -d ~/.claude/skills
 ```
 
-Then start a new Claude Code session.
-
-### Claude apps (web, desktop, Cowork)
-
-1. Download **[horses-mouth.zip](https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip)**.
-2. Make sure code execution is on in your settings. Skills need it.
-3. Go to **Customize → Skills**. Click **+**, then **Create skill**, then **Upload a skill**, and choose the zip.
-
-Uploaded skills work in both chat and Cowork. [Anthropic's help article](https://support.claude.com/en/articles/12512180-using-skills-in-claude) has screenshots.
+Then start a new Claude Code session. To update later, run the same command again.
 
 ### Claude API
 
-Upload the `skills/horses-mouth` folder with the Skills API, then attach it to your requests. See [Anthropic's Agent Skills docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
+Upload the `skills/horses-mouth` folder with the Skills API, then attach it to your requests. See [Anthropic's docs on skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview).
 
-## Optional: an always-on backup line
+## Optional: a backup line
 
-Claude loads a skill when a question matches its description. On low effort, that match can miss. For a safety net, add this line to your custom instructions:
+Claude picks up a skill when your question matches the skill's description. Sometimes it misses. For a safety net, add this line to your custom instructions:
 
-> When I ask for an official fact (price, date, spec, policy), check the owner's own website before answering. Label each figure official, calculated, or unofficial. If sources disagree, check before replying. Don't offer to check later.
+> When I ask about a fact that has an official source, read that source before answering. Label each fact official, calculated, or secondhand. If sources disagree, check before replying. Don't offer to check later.
 
+- **Claude apps:** paste it into **Instructions for Claude** in Settings. Older versions call it personal preferences.
 - **Claude Code:** add it to `~/.claude/CLAUDE.md`.
-- **Claude apps:** paste it into your personal preferences in Settings.
 
 ## FAQ
 
-**Is it only for prices?**
-No. It covers release dates, specs, fees, limits, policies, and rules. Anything one owner controls.
+**What kinds of questions does it handle?**
+Any question with an official source. Prices, dates, specs, laws, rules, policies, deadlines, statistics, study results, quotes, software docs, and more.
 
-**What if the owner never published the number?**
-Claude says so, lists what it checked, and labels any outside figure unofficial.
+**What if there is no single official source?**
+Claude uses the most direct evidence it can find, like original documents or official data, and tells you that is what it used.
+
+**What if the source never published the answer?**
+Claude says so, lists what it checked, and labels anything from other sites as secondhand.
 
 **Will it slow down everyday chat?**
-No. It loads only for owner-controlled facts. Opinions, reviews, and street prices get a normal answer.
+No. It skips opinions, brainstorming, creative writing, and common knowledge.
 
-**How do I call it on purpose?**
+**How do I use it on purpose?**
 In Claude Code, type `/horses-mouth`. In the Claude apps, ask Claude to use the horses-mouth skill.
 
-**Which models does it work with?**
-Any Claude model that supports skills.
+**Which versions of Claude does it work with?**
+Any version of Claude that supports skills.
 
 ## What's in the repo
 
@@ -165,4 +169,4 @@ skills/horses-mouth/SKILL.md      the skill (it's short, read it)
 
 ## License
 
-MIT. Use it, fork it, improve it.
+MIT. Free to use and change.
