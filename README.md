@@ -18,6 +18,8 @@ Before Claude tells you a fact, it reads the official source. The maker, the age
 
 Horse's Mouth is a skill for Claude. A skill is a short set of steps that Claude picks up when a question calls for it. This one makes Claude check the original source before it answers.
 
+**[See real answers on the site](https://tstrider.github.io/horses-mouth/)** before you install anything.
+
 ## The problem
 
 Ask Claude to look something up and it searches the web. Then it can read whatever shows up first: a news story, a blog, a forum post. The official source may sit right there in the results, never opened.
