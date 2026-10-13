@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Horse's Mouth. Answers straight from the source.</title>
+<meta name="description" content="A skill that makes Claude read the official source before it states a fact, and label each key fact official, calculated, secondhand, or unchecked. Free and open source.">
+<meta name="theme-color" content="#09090E">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://thomaskstrider.com/horses-mouth/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Horse's Mouth">
+<meta property="og:title" content="Horse's Mouth">
+<meta property="og:description" content="A skill that makes Claude read the official source before it states a fact. Every answer on the page is real.">
+<meta property="og:url" content="https://thomaskstrider.com/horses-mouth/">
+<meta property="og:image" content="https://thomaskstrider.com/horses-mouth/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The first line of a real answer from Claude, labeled official, above the page it came from.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Horse's Mouth">
+<meta name="twitter:description" content="A skill that makes Claude read the official source before it states a fact.">
+<meta name="twitter:image" content="https://thomaskstrider.com/horses-mouth/assets/og.png">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=10">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=10">
+<link rel="apple-touch-icon" href="assets/icon-180.png?v=10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=10">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1B1B2A"/><path d="M9.500 27c0-6 1.400-10 4.600-13.200l-2-6.300 4.700 2.700c4.700-.800 8.700 2.600 9.200 8.200l.300 2.600c.100 1.100-.900 1.900-1.900 1.500l-3.300-1.400c-1.300-.500-2.400.200-2.600 1.500L17.800 27z" fill="#F4F4F8"/><circle cx="20.400" cy="15.600" r="1.150" fill="#1B1B2A"/><path d="M27.600 24.200l2 .900M27.200 26.300l1.500 1.700" stroke="#5CFF9D" stroke-width="1.700" stroke-linecap="round" fill="none"/></svg>
+      <span>Horse's Mouth</span>
+    </a>
+    <nav class="nav-right" aria-label="Site">
+      <a class="nav-link" href="https://github.com/tstrider/horses-mouth" aria-label="The skill on GitHub">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a class="nav-dl dl" href="https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip"><span class="lg">Download the skill</span><span class="sm">Download</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section data-ink="0" class="sec sec--dark hero" id="hero">
+    <div class="wrap head">
+      <p class="eyebrow">A free skill you add to Claude</p>
+      <h1>Make Claude read <span class="ink">the official source</span> first.</h1>
+      <p class="sub">Each answer links the official page behind it, and flags anything Claude could not confirm there.</p>
+      <div class="cta">
+        <a class="btn btn--glow dl" href="https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip">Download the skill</a>
+        <a class="btn btn--ghost" href="https://github.com/tstrider/horses-mouth">View on GitHub</a>
+      </div>
+    </div>
+    <div class="wrap" id="d-hero"></div>
+  </section>
+
+  <section data-ink="1" class="sec sec--light" id="labels">
+    <div class="wrap head">
+      <h2>Claude tells you <span class="ink">where each fact came from.</span></h2>
+      <p class="sub"><span>Each fact gets one of four labels.</span></p>
+    </div>
+    <div class="wrap" id="d-labels"></div>
+  </section>
+
+  <section data-ink="2" class="sec sec--dark" id="covers">
+    <div class="wrap head">
+      <h2>It works for prices, laws, deadlines, <span class="ink">and scores.</span></h2>
+      <p class="sub"><span>Claude reads the page of whoever is in charge of the fact: the maker, the store, the agency, the league.</span></p>
+    </div>
+    <div class="wrap" id="d-covers"></div>
+  </section>
+
+  <section data-ink="3" class="sec sec--light" id="steps">
+    <div class="wrap head">
+      <h2>Claude looks things up <span class="ink">the same way every time.</span></h2>
+      <p class="sub"><span>Seven steps, each shown on a question Claude answered.</span></p>
+    </div>
+    <div class="wrap" id="d-steps"></div>
+  </section>
+
+  <section data-ink="0" class="sec sec--dark" id="effort">
+    <div class="wrap head">
+      <h2>Fast answers <span class="ink">still get checked.</span></h2>
+      <p class="sub"><span>You can set Claude to low effort for faster answers.</span> <span>Claude then checks less.</span> <span>With the skill, it still reads the source.</span></p>
+    </div>
+    <div class="wrap" id="d-effort"></div>
+  </section>
+
+  <section data-ink="1" class="sec sec--light" id="proof">
+    <div class="wrap head">
+      <h2>See the page behind <span class="ink">a fact.</span></h2>
+    </div>
+    <div class="wrap" id="d-proof"></div>
+  </section>
+
+  <section data-ink="2" class="sec sec--dark" id="nosource">
+    <div class="wrap head">
+      <h2>When a fact has no official source, Claude uses <span class="ink">the best evidence.</span></h2>
+      <p class="sub"><span>Claude tells you what it used.</span></p>
+    </div>
+    <div class="wrap" id="d-nosource"></div>
+  </section>
+
+  <section data-ink="3" class="sec sec--light" id="neverpub">
+    <div class="wrap head">
+      <h2>When the official page doesn't have the answer, <span class="ink">Claude says so.</span></h2>
+      <p class="sub"><span>Apple's spec pages don't list the iPhone 15's battery capacity.</span></p>
+    </div>
+    <div class="wrap" id="d-neverpub"></div>
+  </section>
+
+  <section data-ink="0" class="sec sec--dark" id="skip">
+    <div class="wrap head">
+      <h2>The skill stays out of <span class="ink">everyday chat.</span></h2>
+      <p class="sub"><span>It skips opinions, brainstorming, creative writing, and common knowledge.</span></p>
+    </div>
+    <div class="wrap" id="d-skip"></div>
+  </section>
+
+  <section data-ink="1" class="sec sec--light" id="checks">
+    <div class="wrap head">
+      <h2>Claude tells you <span class="ink">what it could not confirm.</span></h2>
+      <p class="sub"><span>Before it answers, Claude checks its own work four ways.</span> <span>Here it could not open the official site, and it said so.</span></p>
+    </div>
+    <div class="wrap" id="d-checks"></div>
+  </section>
+
+  <section data-ink="2" class="sec sec--dark" id="purpose">
+    <div class="wrap head">
+      <h2><span class="ink">Ask for it by name</span> to be sure it runs.</h2>
+      <p class="sub"><span>Claude sometimes skips a skill.</span> <span>Type <code>/horses-mouth</code> in Claude Code.</span> <span>In the Claude apps, ask Claude to use the horses-mouth skill.</span></p>
+    </div>
+    <div class="wrap" id="d-purpose"></div>
+  </section>
+
+  <section data-ink="3" class="sec sec--light" id="light">
+    <div class="wrap head">
+      <h2><span>The skill is one short page of steps.</span> <span class="ink">Read it here.</span></h2>
+    </div>
+    <div class="wrap" id="d-light"></div>
+  </section>
+
+  <section data-ink="0" class="sec sec--dark install" id="install">
+    <div class="wrap head">
+      <h2><span>Install the skill.</span> <span class="ink">Ask for a fact.</span></h2>
+    </div>
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="Where you use Claude">
+        <button type="button" class="tab is-on" role="tab" data-tab="apps" aria-selected="true">Claude apps</button>
+        <button type="button" class="tab" role="tab" data-tab="code" aria-selected="false">Claude Code</button>
+        <button type="button" class="tab" role="tab" data-tab="api" aria-selected="false">Claude API</button>
+      </div>
+      <div class="panel inst" data-pane="apps">
+        <ol class="inst-steps">
+          <li><b>1</b><div><a class="btn btn--glow dl" href="https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip">Download the skill</a><p>It's one zip file.</p></div></li>
+          <li><b>2</b><div><h3>Turn on code execution</h3><p>It's in your settings. Skills need it.</p></div></li>
+          <li><b>3</b><div><h3>Upload the zip</h3><p>Go to Customize, then Skills. Click +, then Create skill, then Upload a skill.</p></div></li>
+        </ol>
+      </div>
+      <div class="panel inst" data-pane="code" hidden>
+        <div class="term"><div class="term-bar"><span>Run these inside Claude Code</span><button type="button" class="copy" data-copy="c-plugin">Copy</button></div><pre><code id="c-plugin">/plugin marketplace add tstrider/horses-mouth
+/plugin install horses-mouth@horses-mouth</code></pre></div>
+        <div class="term"><div class="term-bar"><span>Or run this in a Mac or Linux terminal</span><button type="button" class="copy" data-copy="c-curl">Copy</button></div><pre><code id="c-curl">mkdir -p ~/.claude/skills &amp;&amp; curl -fsSL https://github.com/tstrider/horses-mouth/releases/latest/download/horses-mouth.zip -o /tmp/horses-mouth.zip &amp;&amp; unzip -o /tmp/horses-mouth.zip -d ~/.claude/skills</code></pre></div>
+        <p class="fine">Then start a new Claude Code session.</p>
+      </div>
+      <div class="panel inst" data-pane="api" hidden>
+        <p class="inst-p">Upload the <code>skills/horses-mouth</code> folder with the Skills API, then attach it to your requests.</p>
+        <a class="btn btn--ghost" href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">Anthropic's docs on skills</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p><span id="foot-real"></span> Free and open source under the MIT license.</p>
+    <nav aria-label="Project links">
+      <a href="https://github.com/tstrider/horses-mouth">GitHub</a>
+      <a href="https://github.com/tstrider/horses-mouth#readme">README</a>
+      <a href="https://github.com/tstrider/horses-mouth/blob/HEAD/skills/horses-mouth/SKILL.md">The skill file</a>
+      <a href="https://github.com/tstrider/horses-mouth/blob/HEAD/LICENSE">License</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/hero-data.js?v=10" defer></script>
+<script src="assets/site.js?v=10" defer></script>
+</body>
+</html>
